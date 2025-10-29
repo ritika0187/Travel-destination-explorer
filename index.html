@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DreamGetaway</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1 class="title">🌍 Travel Destination Explorer 🌍</h1>
+
+  <div class="filters">
+    <input type="text" id="search" placeholder="Search destination...">
+    <select id="mood-filter">
+      <option value="">Select Mood</option>
+      <option value="adventure">Adventure</option>
+      <option value="romantic">Romantic</option>
+      <option value="relaxing">Relaxing</option>
+      <option value="cultural">Cultural</option>
+      <option value="urban">Urban</option>
+      <option value="party">Party</option>
+    </select>
+    <select id="budget-filter">
+      <option value="">Select Budget</option>
+      <option value="low">Low</option>
+      <option value="medium">Low - Medium</option>
+      <option value="high">High</option>
+    </select>
+
+    <button id="resetFilters">Reset</button>
+    <button onclick="aiTravelSuggestion()">✨ Smart AI Suggestion</button>
+  </div>
+  <h2 id="recommendation" class="recommendation-text"></h2>
+
+  <!-- Buttons for Login and Wishlist -->
+  <div class="top-buttons">
+    <button id="loginBtn" class="action-btn">Login 🖥️</button>
+    <button id="wishlistBtn" class="action-btn">Wishlist ❤️</button>
+  </div>
+
+  <!-- LOGIN POPUP -->
+  <div id="loginPopup" class="popup-overlay hidden">
+    <div class="popup-box">
+      <button id="closeLogin" class="close-btn">&times;</button>
+      <h2>Login</h2>
+      <input id="loginEmail" type="email" placeholder="Email" />
+      <input id="loginPassword" type="password" placeholder="Password" />
+      <button id="loginSubmit" class="primary-btn">Login</button>
+      <p class="small">New user? <span id="openSignup" class="link-like">Sign Up</span></p>
+    </div>
+  </div>
+
+  <!-- SIGNUP POPUP -->
+  <div id="signupPopup" class="popup-overlay hidden">
+    <div class="popup-box">
+      <button id="closeSignup" class="close-btn">&times;</button>
+      <h2>Sign Up</h2>
+      <input id="signupEmail" type="text" placeholder="Email / Mobile" />
+      <input id="signupPassword" type="password" placeholder="Password" />
+      <input id="signupRePassword" type="password" placeholder="Re-enter Password" />
+      <button id="signupSubmit" class="primary-btn">Sign Up</button>
+    </div>
+  </div>
+
+  <!-- DESTINATIONS CONTAINER -->
+  <div class="destinations" id="destinations"></div>
+
+  <!-- DESTINATION POPUP -->
+  <div id="popup" class="popup-overlay hidden">
+    <div id="popup-content" class="popup-box">
+      <button id="close-popup" class="close-btn">&times;</button>
+      <div class="popup-text">
+        <h2 id="popup-title"></h2>
+        <p id="popup-description"></p>
+        <p id="popup-weather"></p>
+
+        <h3 class="budget-heading">💰 Budget Breakdown</h3>
+        <ul id="popup-budget" class="budget-list"></ul>
+
+        <div class="popup-actions">
+          <button id="close-popup-bottom" class="close-popup primary-btn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
