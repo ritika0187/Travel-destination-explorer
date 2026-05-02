@@ -448,5 +448,7 @@ function aiTravelSuggestion() {
   else if (mood === "cultural") suggestion = "🏯 Kyoto or Rome — both are rich in culture and history!";
   else if (mood === "urban") suggestion = "🏙️ New York or Tokyo — explore the city life!";
 
+  console.log( aiTravelSuggestion);
+  
   alert("✨ AI Suggestion: " + suggestion);
 }
